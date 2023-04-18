@@ -9,10 +9,6 @@ from django.contrib import messages
 #from django.views,generic.detail import DetailView
 
 
-# Create your views here.
-
-
-
 def register(request):
     form =SignUpForm()
     form2 = CustomerForm()
