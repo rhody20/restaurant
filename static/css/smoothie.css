@@ -1,0 +1,33 @@
+.navbar-nav li a {
+    color: #0d6efd !important;
+}
+  .card{
+    width: 16rem !important;
+    margin: 20px;
+;
+  }
+  .card-body{
+    height: 162px !important;
+  }
+  .card img{
+    height: 180px;
+    object-fit: cover;
+    height: 100%;
+  }
+  ul {
+    margin-top: 100px;
+    display: flex;
+  }
+  ul li{
+    list-style: none;
+    width: 35%;
+    flex-wrap: wrap;
+    word-wrap: break-word;
+  }
+  ul li h2{
+    text-align: center;
+    text-transform: uppercase;
+    color: #0d6efd !important;
+    font-weight: 800 !important;
+  }
+  

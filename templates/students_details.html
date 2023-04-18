@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOOPING NG</title>
+</head>
+<body>
+
+    <h3>success</h3>
+<a href="{% url 'activities:updated'%}  ">updated bookings</a>
+<br>
+
+
+
+    
+
+<form action="" method="post">
+{% csrf_token %} 
+
+    <label for="first name">first name</label>
+    <input type="text" id = "f_name"  name="f_name" placeholder=" ENTER YOUR FISRT NAME", required><br>
+
+    <label for="last name">last name</label>
+    <input type="text" id="l_name"  name="l_name" placeholder=" ENTER YOUR LAST NAME", required><br>
+
+    <label for="username">username</label>
+    <input type="text" id="username"   name="username" placeholder=" ENTER YOUR USERNAME", required><br>
+
+    <label for="EMAIL ADDRESS">EMAIL ADDRESS</label>
+    <input type="email"name="email"id= "email" placeholder=" ENTER YOUR LAST NAME", required><br>
+
+    <label for="password1">password1</label>
+    <input type="password" id="password1"   name="password1" placeholder=" ENTER YOUR PASSWORD", required> <br>
+
+    <label for="password2">password2</label>
+    <input type="password" id="password2"   name="password2" placeholder=" CONFIRM YOUR PASSWORD", required><br>
+
+     <button type="button">submit</button>
+
+
+
+</form>
+
+    
+</body>
+</html>

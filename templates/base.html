@@ -1,0 +1,101 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DATA BASE</title>
+
+    <link rel="stylesheet" href="../static/css/base.css">
+</head>
+<body>
+
+
+    <!--<img src="../static/images/strawberry.jpg" alt="">-->
+    <h1>WELLCOME TO RHODEIS INTERNATIONAL SCHOOL OF CODING </h1>
+
+<p>JUNIOR STUDENTS DATA BASE</p>
+<!--<table id="table1">  
+    <tr>     
+        <th class="id">IDENTIFICATION NO.</th>
+        <th class="id">NAME</th>
+        <th class ="id">AGE</th>
+        <th class="id">CLASS</th>
+    </tr> 
+
+
+
+    <tr>
+        <td class="data" >001</td>
+        <td class="data">Christ Oyakhilome</td>
+        <td class="data">22</td>
+        <td class="data">jss2</td>
+    </tr>
+
+
+    <tr>
+        <td class="kamiye">002</td>
+        <td class="kamiye">Oyebowale kamiye</td>
+        <td class="kamiye">21 </td>
+        <td class="kamiye">jss1</td>
+
+    </tr>
+
+    <tr>
+        <td class="Roda">003</td>
+        <td class="Roda">Odeh Roda</td>
+        <td class="Roda">25</td>
+        <td class="Roda">jss3</td>
+
+    </tr>
+    
+</table> <br>-->
+
+
+<!--<div id="table2">
+<form action="" id="">
+    <input type="text" placeholder="Enter Your Name">
+    <input type="text" placeholder="Enter Your class"> <br>
+    <input type="text" placeholder="Enter your matric number here"> <br>
+
+    <input type="radio" name="sex" id="">MALE
+    <input type="radio" name="sex" id=""> FEMALE
+ 
+  
+<select><option value="">SELLECT YOUR DEPARTMENT </option>
+        <option value=""> ART</option>
+        <option value="">SCIENCE</option> 
+        <option value="">COMMERCE </option>
+        
+        </select><br><br>
+   
+    <button>send</button>
+</form>
+
+</div>-->
+
+
+<div id="table2">
+    <form action="{% url 'activities:pupils' %}" id="" method="POST">
+        {% csrf_token %}
+        <input type="text" name="f_name"  placeholder="FIRST NAME"><br>
+        <input type="text"name="l_name" placeholder="LAST NAME"><br>
+        <input type="text" name="username"  placeholder="USER NAME"> <br>
+        <input type="text"name="password" placeholder="PASSWORD"><br>
+        <input type="text" name="matric" placeholder="MATRIC NUMBER"> <br>
+        <input type="email" name="email" placeholder="your email"> <br>
+
+
+       <!-- <input type="radio" name="sex" value="male" id="">MALE
+        <input type="radio" name="sex" value="female" id=""> FEMALE
+        <br>-->
+      
+       
+        <button>send</button>
+    </form>    
+    </div>
+
+</body>
+</html>

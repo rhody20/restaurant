@@ -1,0 +1,36 @@
+
+<style>
+    .li{color: blueviolet !important;}
+
+</style>
+<em>my todolist </em>
+
+<h3>task: {{object}} </h3>
+<table>
+    <tr>
+        <th>{{item.user}}</th>
+        <th></th>
+    </tr>
+    {% for task in object_list %}
+    <tr>
+        <td>
+            {{task.title}}</td>
+            <td> <a href="{% url 'task' task.id %}"></a>   views</td>
+        
+    </tr>
+    {% empty %}
+    <h3>my todays list </h3>    
+    {% endfor %}    
+
+</table>
+
+<h2>what is going here?</h2>
+
+<li>wakeup @ 6pm <input type="checkbox"></li><br>
+<li>pray @ 6,20am <input type="checkbox"></li><br>
+<li>do yoga @ 6,30am<input type="checkbox"></li><br>
+<li>do some coding @ 6,45am <input type="checkbox"></li><br>
+<li>bath @7:00am <input type="checkbox"></li><br>
+<li>off to coding tutorials @ 7:30am <input type="checkbox"></li><br>
+<li>off to kuddy cosmetics @ 12am <input type="checkbox"></li><br>
+<li>back home @ 7pm and exhusted<input type="checkbox"></li><br>

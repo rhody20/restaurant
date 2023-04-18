@@ -1,0 +1,52 @@
+
+{% extends 'drinks.html' %}
+{% block content %}
+{% load static %}
+
+<style>
+    .pay-detail{
+        margin-top: 200px;
+    }
+    .conf{
+        margin-top: 20px;
+    }
+</style>
+
+<div class="pay-detail">
+    
+    {% if form.errors %}
+
+    <p>{{form.as_p}}</p>
+
+    {% endif %}
+
+<form action="{% url 'activities:paid' %}" method="POST">
+    {% csrf_token %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 form-control">
+                <label for="">full name</label>
+              <input type="text" name="fullname" value="{{request.user}} {{firstname}} {{lastname}}" class="form-control" readonly>
+            </div>
+            <div class="col-md-6">
+                <label for="">card detail</label>
+                <input type="text" name="card_details" class="form-control">
+    
+            </div>
+            <div class="col-md-6">
+                <label for="">amount</label>
+                <input type="text" name="total" value="{{total}}" class="form-control" readonly>
+            </div>
+        </div>
+       
+        <input type="submit" class="btn btn-danger conf" value="Confirm Payment">
+    
+    
+    </div>
+
+</form>
+</div>
+
+
+
+{% endblock %}

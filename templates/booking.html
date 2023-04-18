@@ -1,0 +1,23 @@
+
+<a href="{% url 'activities:bookNOW' %}  ">NEW BOOKINGS</a><br>
+
+<form action=" {% url 'activities:booking' %}  " id="" method="POST">
+
+      {% csrf_token  %}
+
+    <h3>BOOKING INFORMATION </h3>
+    <label for="namees">NAME</label>
+    <input type="text" name="namees"  placeholder="NAMES"><br>
+
+    <label for="reserve"> RESERVATION_NO</label>
+    <input type="text"name="reserv_no" placeholder=" RESERVATION_NO"><br>
+
+    <label for="EMAIL">EMAIL</label>
+    <input type="email" name="email"  placeholder="EMAIL"> <br>
+
+    <label for="DATE">DATE</label>
+    <input type="date"name="date" placeholder="date"><br>
+
+    <button id="button">submit</button>
+</form>    
+    

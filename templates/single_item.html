@@ -1,0 +1,21 @@
+<table>
+    <thead>
+        <th>name</th>
+        <th>reserve no</th>
+        <th>email</th>
+        <th>date</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{item.namees}}</td>
+            <td>{{item.reserv_no}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.date}}</td> 
+            
+    
+        </tr>
+        <a href="{% url 'activities:booking_update' item.pk %}">update</a> &nbsp; &nbsp;
+        <a class="btn btn-danger" href="{% url 'activities:delete_show' item.pk %}">delete</a>
+    </tbody>
+</table>
+

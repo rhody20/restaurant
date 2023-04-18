@@ -1,0 +1,20 @@
+<style>
+    ul li{
+        list-style: none;
+    }
+</style>
+{{length}}
+{{num}}
+
+{% for item in rhoda %}
+<ul>
+    <li>{{item.id}}</li>
+    <li>{{item.church_name}}</li>
+    <li>{{item.home_cell}}</li>
+    <li>item.vertual_church</li>
+    <li>item.pastor_nam</li>
+    <li>item.date_joined</li>
+    <li><a href="">update info</a></li>
+    <li><a href="">delete </a></li>
+</ul>
+{% endfor %}

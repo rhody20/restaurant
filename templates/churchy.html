@@ -1,0 +1,11 @@
+<h3>church form</h3>
+
+
+<form action="" method="POST">
+   {% csrf_token %}
+    {{form.as_p}}
+
+    <button>submit</button>
+
+    {{form.errors }}
+</form>

@@ -1,0 +1,77 @@
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en"us>
+
+
+
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM PAGE</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+</head>
+<style>
+    #box{border: 12px; border-radius: 5px;border-style: solid;padding:5%; margin: 5%; border-color:
+     blueviolet;}
+     em{text-align: center; text-decoration: underline;}
+</style>
+
+<body>
+
+
+    <p>click here to register for your exams</p>
+
+<a href="{% url 'activities:formpage'%}" class="button">student  form</a>
+<p>click below for parents details</p>
+<a href=" {% url 'activities:p_link' %}  " class="button ">parents detatils</a><br>
+<a href=" {% url 'activities:shop' %} "> SHOPPING LINK</a> <br>
+<a href=" {% url 'activities:booking'%}  "> BOOKING LINK</a><br>
+<a href="{% url 'activities:church'%}  ">CHURCH POTAL</a><br>
+<a href="{% url 'activities:smoothie'%} "> food menu</a>
+
+
+    {% include 'navbar.html' %}
+
+{% for mesg in messages %}
+<h3 style="color: green;">{{mesg}}</h3>
+{% endfor%}
+<div>
+    <h2>wellcome to our wonderful page,</h2>
+</div>
+<p>addition of 2  numbers</p>
+<form action="{% url 'activities:form' %}" method="post">
+    {% csrf_token %}<!--for security verification-->
+
+   <label for="what is your name">number 1</label><br>
+   <input type="number" name="a"><br>
+   <label for="">number 2</label><br>
+   <input type="number" name="t"><br>
+   <button>total</button>
+</form>
+
+
+
+<div id="box">
+<em>THIS IS RHODIES INTERNATIONAL SCHOOL OF CODING </em>
+<P>CONTACT US ON INSTAGRAM <SPan>@ OFFICIAL_RHODY</SPan> @</P>
+<P>GET US ON TWEETER <span>@ VICTORIARHODY</span>  </P>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>

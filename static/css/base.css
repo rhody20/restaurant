@@ -1,0 +1,15 @@
+
+#TABLE2{border: 12px; border-style: double; margin-left: 10px; padding: 10px;}
+.id{border:5px; border-style:solid; border-color:black;}
+.kamiye{border: 5px; border-style: double; border-color: mediumvioletred;}
+.roda{border: 5px; border-style: double; border-color: crimson;}
+.data{border: 5px; border-style: double; border-color:red;}
+
+
+
+#table2{border: 10px; border-radius: 5px;border-color: blue;}
+
+
+h1{text-align: center;text-decoration: double;text-decoration-color: black;}
+p{text-decoration: double;color: aqua;text-decoration-line: underline;}
+

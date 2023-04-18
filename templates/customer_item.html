@@ -1,0 +1,125 @@
+
+
+
+{% extends 'drinks.html' %}
+{% block content %}
+{% load static %}
+
+<style>
+    .customer-details{
+        margin-top: 150px;
+    }
+    .customer-details .container h3{
+        color: #000;
+      
+    }
+     .customer-details span{
+        color: #000;
+        font-style: italic;
+        text-transform: capitalize;
+        font-size: 22px;
+        text-align: center;
+    }
+    .customer-details .container h4,h2{
+        color: purple;
+        font-size: 20px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: center;
+    }
+table{
+    border: 5px;
+     border-style: solid;
+     border-color: black; 
+     margin: 250px;
+     margin-top: 20px;
+     position: relative;
+     left: 15%;
+ 
+
+     
+     
+
+    }
+
+th{
+    border:5px;
+     border-style:solid;
+     padding: 15px;
+      border-color: purple;
+    }
+td{
+    border: 3px;
+     border-style: solid;
+     padding: 15; 
+     border-color: plum;
+      }
+
+ .btn{
+    width: 100%;
+    font-size: 18px;
+    text-transform: capitalize;
+ }
+ .total{
+   margin-left: 50px;
+   font-size: 22px;
+   font-weight: 700;
+   text-transform: capitalize;
+ }
+ .total span{
+    color: purple;
+ }     
+</style>
+
+
+<h2>customer details </h2>
+<!--<div class="customer-details">
+    <div class="container">
+        <h2><span>Username:</span> {{request.user.username}}</h2>
+        <h4><span>full name: </span>{{request.user.first_name}} {{request.user.last_name}}</h4>
+    </div>
+</div>-->
+
+{% if customerInfo %}
+
+<table>
+    <div class="customer-details">
+        <div class="container">
+            <h2><span>Username:</span> {{request.user.username}}</h2>
+            <h4><span>full name: </span>{{request.user.first_name}} {{request.user.last_name}}</h4>
+        </div>
+    <tr>
+        <th>product</th>
+       
+        <th>price</th>
+        <th>date ordered</th>
+        <th>action</th>
+    </tr>
+
+    {% for product in customerInfo %}
+    <tr>
+        <td>{{ product.product_name }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.create }}</td>
+        <td><a href="{% url 'activities:delete-item' product.id %}" class="btn btn-danger">delete</a></td>
+        
+    </tr>
+
+    {% endfor %}
+    <td colspan="3" class="total">total amount: <span>${{total }}</span></td>
+    <td colspan="2"><a href="{% url 'activities:pay' %}" class="btn btn-success pay">pay</a></td>
+
+</table>
+
+{% else %}
+<h3 style="margin-top: 200px; color: red; text-align: center;">Your cart is empty</h3>
+{% endif %}
+
+{% if messages %}
+{% for msg in messages %}
+<p>{{msg}}</p>
+{% endfor %}
+{% endif %}
+
+{% endblock %}

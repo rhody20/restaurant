@@ -1,0 +1,75 @@
+
+
+
+
+{% extends 'drinks.html' %}
+{% block content %}
+{% load static %}
+
+<style>
+    .details{
+        margin-bottom: 100px;
+        margin-top: 100px;
+    }
+    .card{
+        width: 30rem !important;
+    }
+    h1{
+        font-size: 24px;
+        font-weight: 500;
+        margin-top: 10px;
+    }
+    h1 span{
+        margin-left: 20;
+        color: red;
+    }
+    .card-text{
+        font-size: 16px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #000;
+        padding: 0;
+        width: 100%;
+    }
+</style>
+
+
+<div class="container details">
+    <form action="{% url 'activities:submitodER' %}" method="post">
+        {% csrf_token %}
+        <div class="row">   
+            <div class="col-md-">
+           <div class="card">
+            
+            <img src="{{item.image.url}}" alt="">
+            <h1>{{ item.prod_name}} <span>{{item.price}}</span></h1>
+            <input type="text" name="product_name" value="{{item.prod_name}}">
+            
+            <input type="text" name="price" value="{{item.price}}">
+           <div class="text">
+            <p class="card-text">{{item.discrption}}</p>
+           </div>
+           </div>
+            </div>
+       
+        
+          
+  
+        
+
+        
+        </div>
+      <button class="btn btn-danger">Order now</button>
+      <!--<button class="btn btn-dark">Oorder now</button>
+      <input type="submit"  class="btn btn-primary" value="order now">-->
+        </form>
+    </div>
+
+
+
+
+
+{% endblock %}
+
+
+
+

@@ -1,0 +1,33 @@
+<h3> booking successful</h3>
+<em>how would you like us to serve you better?</em><br>
+
+<style>
+    #msg{
+        color: green;
+        font-size: 18px;
+        font-weight: 500;
+        font-family: sans-serif;
+        text-align: center;
+        text-transform: capitalize;
+    }
+</style>
+
+<a href="{% url 'activities:show'%}">show bookings</a>
+
+{% if messages %}
+{% for mssg in messages %}
+<h4 id="msg">{{mssg}}</h4>
+{% endfor %}
+{% endif %}
+
+{% for item in show %}
+<ol>
+    <li>{{item.id}}</li>
+    <li>{{item.namees}}</li>
+    <li>{{item.reserv_no}}</li>
+    <li>item.email</li>
+    <li>item.date</li>
+    <!--<li><a href="">update info</a></li>-->
+    <li><a href="{% url 'activities:show_single_item' item.id %}"> show details </a></li>
+</ol>
+{% endfor %}
