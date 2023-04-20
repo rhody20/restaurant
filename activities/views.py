@@ -364,7 +364,17 @@ def PaymentInfo(request):
 
 
 
-
+def searches(request):
+    if request.method =="POST":
+        item=request.POST.get('search')
+        if Smoothie.objects.filter(prod_name__icontains=item):
+           products= Smoothie.objects.filter(prod_name__icontains=item)
+            
+           context={'products':products}
+           return render(request,"search_products.html",context)
+    
+        context={'item':item}
+        return render(request,"search_products.html",context)
 
 
 

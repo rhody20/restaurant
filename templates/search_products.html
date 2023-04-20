@@ -1,0 +1,53 @@
+{% extends 'index.html' %}
+{% block content %}
+{% load static %}
+
+
+<style>
+    .drinks{
+        margin-top: 100px;
+    }
+    .card{
+        width: 400px;
+    }
+    .not-found{
+        margin-top: 150px;
+        font-size: 22px;
+        font-weight: 700;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-align: center;
+        text-transform: capitalize;
+    }
+</style>
+
+{% if products %}
+<div class="container drinks"> 
+    <h1>Searched Products</h1>
+    <div class="row">
+        {% for item in products %}
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{{ item.image.url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{item.prod_name}}</h5>
+                  <span style="font-weight: bolder; color: blue;">{{item.price}}</span>
+                  <span style=" text-decoration-line: line-through; color: red; font-weight:600;font-family: 'Courier New', Courier, monospace;" >$700 </span>
+                  <h4>{{item.availability}}</h4>
+                  <p class="card-text">{{item.description}}</p>
+                  
+                  
+                  <a href="{% url 'activities:order_' item.id  %}" class="btn btn-primary">DETAILS</a>
+                  
+                </div>
+              </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% elif not products %}
+<h3 class="not-found">{{item}} not found</h3>
+
+{% endif %}
+
+{% endblock %}

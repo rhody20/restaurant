@@ -54,8 +54,8 @@ urlpatterns=[
 
 
   #path('endpage/',views.backEnd,name='endpage'),
-  #path('signUP/',views.signing,name='signUP'),
-
+  path('search-item/',views.searches,name='search-item'),
+  
    path('others/',views.otherPages,name='others'),
    path('submitodER/',views.submitOrder,name='submitodER'),
    path('customer_order/', views.customer_item,name='customer_order'),
